@@ -1,0 +1,244 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * DESIGN SYSTEM — Vinícius Nério Estética Avançada
+ * Philosophy: "Atelier Noir Dorado" — Art Déco contemporâneo, masculino, sofisticado
+ * Paleta: Verde Oliva Escuro (#0D3D38) + Dourado (#C9A84C) + Off-White (#F5F0E8)
+ * Tipografia: Cormorant Garamond (display/serif) + Jost (body/sans)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-green-deep: var(--green-deep);
+  --color-green-mid: var(--green-mid);
+}
+
+:root {
+  /* Brand Colors */
+  --gold: oklch(0.72 0.12 75);           /* #C9A84C — dourado principal */
+  --gold-light: oklch(0.85 0.10 80);     /* #E8D5A3 — dourado claro */
+  --gold-dark: oklch(0.58 0.10 72);      /* #9A7A2E — dourado escuro */
+  --green-deep: oklch(0.28 0.06 175);    /* #0D3D38 — verde oliva profundo */
+  --green-mid: oklch(0.32 0.07 172);     /* #0F4A44 — verde médio */
+  --green-dark: oklch(0.20 0.05 175);    /* #071F1F — verde muito escuro */
+  --offwhite: oklch(0.96 0.01 80);       /* #F5F0E8 — off-white quente */
+
+  /* Semantic tokens */
+  --radius: 0.25rem;
+  --background: oklch(0.28 0.06 175);
+  --foreground: oklch(0.96 0.01 80);
+  --card: oklch(0.30 0.06 174);
+  --card-foreground: oklch(0.96 0.01 80);
+  --popover: oklch(0.26 0.06 175);
+  --popover-foreground: oklch(0.96 0.01 80);
+  --primary: oklch(0.72 0.12 75);
+  --primary-foreground: oklch(0.20 0.05 175);
+  --secondary: oklch(0.32 0.07 172);
+  --secondary-foreground: oklch(0.96 0.01 80);
+  --muted: oklch(0.32 0.06 174);
+  --muted-foreground: oklch(0.75 0.04 80);
+  --accent: oklch(0.72 0.12 75);
+  --accent-foreground: oklch(0.20 0.05 175);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.72 0.12 75 / 20%);
+  --input: oklch(0.72 0.12 75 / 15%);
+  --ring: oklch(0.72 0.12 75 / 50%);
+  --sidebar: oklch(0.26 0.06 175);
+  --sidebar-foreground: oklch(0.96 0.01 80);
+  --sidebar-primary: oklch(0.72 0.12 75);
+  --sidebar-primary-foreground: oklch(0.20 0.05 175);
+  --sidebar-accent: oklch(0.32 0.07 172);
+  --sidebar-accent-foreground: oklch(0.96 0.01 80);
+  --sidebar-border: oklch(0.72 0.12 75 / 20%);
+  --sidebar-ring: oklch(0.72 0.12 75 / 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1320px;
+    }
+  }
+
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #C9A84C 0%, #F0D060 40%, #C9A84C 70%, #9A7A2E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gold divider line */
+  .gold-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  }
+
+  /* Section number style */
+  .section-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7rem;
+    font-weight: 300;
+    color: oklch(0.72 0.12 75 / 8%);
+    line-height: 1;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Gold border draw animation */
+  .gold-border-draw {
+    position: relative;
+    overflow: hidden;
+  }
+  .gold-border-draw::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #C9A84C, #F0D060);
+    transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .gold-border-draw:hover::after {
+    width: 100%;
+  }
+
+  /* Button active scale */
+  button:active:not(:disabled) {
+    transform: scale(0.97);
+    transition: transform 0.16s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Grain texture overlay */
+  .grain-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+  }
+}
+
+/* Keyframe animations */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes drawLine {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+}
