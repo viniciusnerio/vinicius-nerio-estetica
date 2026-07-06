@@ -192,3 +192,6 @@
 [2026-07-05T21:35:05.001Z] {"timestamp":1783287303960,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Home.tsx"],"stack":null}
 [2026-07-05T21:35:05.001Z] {"timestamp":1783287303960,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
 [2026-07-05T22:30:10.023Z] {"timestamp":1783289968510,"level":"LOG","args":["[vite] server connection lost. Polling for restart..."],"stack":null}
+[2026-07-05T22:49:39.676Z] {"timestamp":1783291777661,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-07-05T22:49:39.677Z] {"timestamp":1783291777685,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-07-05T22:49:39.677Z] {"timestamp":1783291777754,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
