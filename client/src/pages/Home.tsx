@@ -194,9 +194,8 @@ export default function Home() {
 <img
   src={HERO_PHOTO}
   alt="Vinícius Nério"
-  className="absolute bottom-0 right-0"
+  className="absolute bottom-0 right-0 h-[115vh] md:h-[95vh] w-auto"
   style={{
-    height: '95vh',
     objectFit: 'contain',
     zIndex: 1,
   }}
@@ -1002,8 +1001,8 @@ export default function Home() {
                 {[
                   { label: 'WhatsApp', value: '(35) 99932-5695', icon: '◉' },
                   { label: 'Instagram', value: '@drviniciusnerio', icon: '◎' },
-                  { label: 'Localização', value: 'Pouso Alegre, MG', icon: '◈' },
-                  { label: 'Horário', value: 'Seg–Sáb, verifique os horários disponíveis', icon: '◇' },
+                  { label: 'Localização', value: 'R. Anália Sales de Oliveira, 155 - Sala 03 - Esplanada, Pouso Alegre - MG', icon: '◈' },
+                  { label: 'Horário', value: 'Seg–Sáb, sob agendamento', icon: '◇' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
                     <span style={{ color: 'oklch(0.72 0.12 75)', fontSize: '1rem', marginTop: '2px' }}>{item.icon}</span>
