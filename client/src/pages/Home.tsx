@@ -194,9 +194,12 @@ export default function Home() {
 <img
   src={HERO_PHOTO}
   alt="Vinícius Nério"
-  className="absolute bottom-0 right-0 h-[115vh] md:h-[95vh] w-auto"
+  className="absolute bottom-0 right-0"
   style={{
+    height: '95vh',
     objectFit: 'contain',
+    transform: 'scale(1.15)',
+    transformOrigin: 'bottom right',
     zIndex: 1,
   }}
 />
