@@ -9,7 +9,7 @@
 import { useEffect, useRef } from 'react';
 import { Navbar } from '@/components/Navbar';
 import { Logo } from '@/components/Logo';
-import minhafoto from '../Assets/images/vinisobremim.png';
+import minhafoto from '../Assets/images/sobremim.png';
 import capa from '../Assets/images/capafundo.png';
 import vinicapa from '../Assets/images/vinicapa.png'
 import { openWhatsApp } from '@/lib/whatsapp';
